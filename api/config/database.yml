@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: taskify_development
+  pool: 5
+  username: postgres
+  password:
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: taskify_test
+  pool: 5
+  username: postgres
+  password:
+  timeout: 5000
