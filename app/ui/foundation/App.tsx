@@ -5,7 +5,7 @@ export default function App() {
 
   const increment = () => {
     setCount(count + 1);
-  }
+  };
 
   return (
     <div>
