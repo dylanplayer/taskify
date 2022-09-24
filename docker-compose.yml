@@ -18,8 +18,6 @@ services:
     hostname: postgres
     ports:
       - 5432:5432
-    volumes:
-      - postgres:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: taskify_production
