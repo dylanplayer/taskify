@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
-    "ts-check": "tsc --project tsconfig.json --noEmit --watch --preserveWatchOutput",
+    "ts-check": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint app/javascript app/ui --fix",
     "test": "jest --passWithNoTests",
     "format": "prettier --config .prettierrc 'app/ui/**/*.ts' 'app/ui/**/*.tsx' 'app/javascript/**/*.ts' 'app/javascript/**/*.tsx' --write --no-error-on-unmatched-pattern"
