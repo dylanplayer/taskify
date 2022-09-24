@@ -10,6 +10,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
     "allowJs": false,
     "declaration": false,
     "emitDecoratorMetadata": true,
@@ -24,6 +25,8 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true
   },
-  "exclude": ["node_modules"],
-  "compileOnSave": false
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": true
 }
