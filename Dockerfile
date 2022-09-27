@@ -22,4 +22,5 @@ RUN yarn install
 EXPOSE 3000
 
 RUN yarn build
-CMD ["rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
+# CMD ["rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
+CMD ["/bin/sh"]
