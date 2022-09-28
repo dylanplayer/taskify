@@ -22,5 +22,11 @@ RUN yarn install
 EXPOSE 3000
 
 RUN yarn build
-# CMD ["rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
-CMD ["/bin/sh"]
+
+RUN "bin/rake db:create"
+RUN "bin/rake db:migrate"
+
+ARG RAILS_MASTER_KEY
+ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
+
+CMD ["bin/rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
