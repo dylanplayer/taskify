@@ -23,8 +23,10 @@ EXPOSE 3000
 
 RUN yarn build
 
-RUN "bin/rake db:create"
-RUN "bin/rake db:migrate"
+ENV RAILS_ENV="production"
+
+RUN "RAILS_ENV=production bin/rake db:create"
+RUN "RAILS_ENV=production bin/rake db:schema:load"
 
 ARG RAILS_MASTER_KEY
 ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
