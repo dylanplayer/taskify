@@ -23,12 +23,14 @@ EXPOSE 3000
 
 RUN yarn build
 
-ENV RAILS_ENV="production"
+# ENV RAILS_ENV="production"
 
-RUN "RAILS_ENV=production bin/rake db:create"
-RUN "RAILS_ENV=production bin/rake db:schema:load"
+# RUN "RAILS_ENV=production bin/rake db:create"
+# RUN "RAILS_ENV=production bin/rake db:migrate"
 
-ARG RAILS_MASTER_KEY
-ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
+# ARG RAILS_MASTER_KEY
+# ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
 
-CMD ["bin/rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
+# CMD ["bin/rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
+
+CMD ["bin/sh"]
