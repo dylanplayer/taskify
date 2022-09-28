@@ -1,4 +1,5 @@
 export const paths = {
   LandingPage: '/',
-  NotFoundPage: '*',
+  NotFound: '*',
+  LoginPage: '/login',
 };
