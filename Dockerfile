@@ -23,4 +23,6 @@ EXPOSE 3000
 
 RUN yarn build
 
-CMD ["bin/rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
+RUN DATABASE_URL=$DATABASE_URL RAILS_MASTER_KEY=$RAILS_MASTER_KEY bin/rails db:migrate
+
+CMD DATABASE_URL=$DATABASE_URL RAILS_MASTER_KEY=$RAILS_MASTER_KEY bin/rails server -p 3000 -b 0.0.0.0 -e production
