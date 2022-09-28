@@ -33,4 +33,4 @@ RUN yarn build
 
 # CMD ["bin/rails", "server", "-p", "3000", "-b", "0.0.0.0", "-e", "production"]
 
-CMD ["bin/sh"]
+CMD ["/bin/sh"]
