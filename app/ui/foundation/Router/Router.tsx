@@ -1,25 +1,21 @@
+import { Container, CircularProgress } from '@mui/material';
+import { Stack } from '@mui/system';
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { LandingPage, LoginPage } from '../../components';
+import { LandingPage } from '../../components';
 import { paths } from '../../constants';
 
 export default function Router() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
-  if (loggedIn) {
+  if (!loggedIn) {
+    window.location.replace(paths.Login);
     return (
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path={paths.LandingPage}
-            element={<LandingPage />}
-          />
-          <Route
-            path={paths.NotFound}
-            element={<Navigate to={paths.LandingPage} />}
-          />
-        </Routes>
-      </BrowserRouter>
+      <Container maxWidth='lg'>
+        <Stack alignItems='center' justifyContent='center' height='400px'>
+          <CircularProgress size={50}/>
+        </Stack>
+      </Container>
     );
   }
 
@@ -27,12 +23,12 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route
-          path={paths.LoginPage}
-          element={<LoginPage />}
+          path={paths.LandingPage}
+          element={<LandingPage />}
         />
         <Route
-          path={paths.NotFound}
-          element={<Navigate to={paths.LoginPage} />}
+          path={paths.All}
+          element={<Navigate to={paths.LandingPage} />}
         />
       </Routes>
     </BrowserRouter>
