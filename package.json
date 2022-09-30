@@ -2,17 +2,18 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@mui/icons-material": "^5.10.6",
-    "@mui/material": "^5.10.6",
+    "@apollo/client": "^3.6.10",
     "esbuild": "^0.15.9",
+    "esbuild-css-modules-plugin": "^2.5.2",
+    "graphql": "^16.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-router-dom": "^6.4.1"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
+    "build": "chmod +x build.js && ./build.js",
+    "build1": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets",
     "ts-check": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint app/javascript app/ui --fix",
     "test": "jest --passWithNoTests",
@@ -32,6 +33,7 @@
     "jest-environment-jsdom": "^29.0.3",
     "prettier": "^2.7.1",
     "ts-jest": "^29.0.1",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "typescript-plugin-css-modules": "^3.4.0"
   }
 }

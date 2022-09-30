@@ -1,5 +1,3 @@
-import { Container, CircularProgress } from '@mui/material';
-import { Stack } from '@mui/system';
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { LandingPage } from '../../components';
@@ -11,11 +9,7 @@ export default function Router() {
   if (!loggedIn) {
     window.location.replace(paths.Login);
     return (
-      <Container maxWidth='lg'>
-        <Stack alignItems='center' justifyContent='center' height='400px'>
-          <CircularProgress size={50}/>
-        </Stack>
-      </Container>
+      <h1>Please login <a href={paths.Login}>here</a></h1>
     );
   }
 

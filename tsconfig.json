@@ -23,10 +23,15 @@
     "target": "es6",
     "jsx": "react",
     "noEmit": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {"name": "typescript-plugin-css-modules"},
+    ],
+    "typeRoots": ["node_modules/@types", "app/ui/types"],
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "build.js"
   ],
   "compileOnSave": true
 }
