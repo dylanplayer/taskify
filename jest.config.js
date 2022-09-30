@@ -3,5 +3,8 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  modulePathIgnorePatterns: ['<rootDir>/vendor/']
+  modulePathIgnorePatterns: ['<rootDir>/vendor/'],
+  moduleNameMapper: {
+    '\\.(css|less|scss|sss|styl)$': '<rootDir>/node_modules/jest-css-modules'
+  }
 };
