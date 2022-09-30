@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "alwaysStrict": true,
     "strictNullChecks": true,
     "strictBindCallApply": true,
     "strictPropertyInitialization": true,
@@ -22,7 +20,7 @@
     "sourceMap": true,
     "target": "es6",
     "jsx": "react",
-    "noEmit": true,
+    "noEmit": false,
     "forceConsistentCasingInFileNames": true,
     "plugins": [
       {"name": "typescript-plugin-css-modules"},

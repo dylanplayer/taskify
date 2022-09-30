@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Task } from './components';
 
-import './TaskList.module.css';
+import styles from './TaskList.module.css';
 
 export default function TaskList() {
   const tasks = [
@@ -11,8 +11,9 @@ export default function TaskList() {
       title: 'Do my homework',
     }
   ];
+
   return (
-    <div className='TaskList'>
+    <div className={styles.TaskList}>
       {
         tasks.map((task, index) => (
           <Task key={index} title={task.title}/>
