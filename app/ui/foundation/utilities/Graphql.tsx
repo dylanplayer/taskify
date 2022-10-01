@@ -1,12 +1,21 @@
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, HttpLink } from '@apollo/client';
 
 interface Props {
   children: React.ReactNode;
 }
 
-export const client = new ApolloClient({
-  uri: '/graphql',
+const csrfToken = document
+  .querySelector('meta[name=csrf-token]')
+  .getAttribute('content');
+
+const client = new ApolloClient({
+  link: new HttpLink({
+    credentials: 'same-origin',
+    headers: {
+      'X-CSRF-Token': csrfToken,
+    },
+  }),
   cache: new InMemoryCache(),
 });
 

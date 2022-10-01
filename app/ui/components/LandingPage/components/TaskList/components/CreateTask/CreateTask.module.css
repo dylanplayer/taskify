@@ -1,4 +1,4 @@
-.Task {
+.CreateTask {
   width: 95%;
   background-color: #202020;
   display: flex;
@@ -9,33 +9,40 @@
   border-radius: 15px;
 }
 
-.TaskTitleContainer {
+.CreateTaskTitleContainer {
   width: 85%;
 }
 
-.TaskTitle {
+.CreateTaskTitleInput {
+  width: 100%;
   margin: 0px;
   word-wrap: break-word;
   text-align: left;
+  background-color: transparent;
+  word-wrap: normal;
+  border: none;
+  color: #E0E0E0;
+  font-size: 16px;
 }
 
-.TaskButtonContainer {
+.CreateTaskButtonContainer {
   width: 10;
 }
 
-.TaskButton {
+.CreateTaskButton {
+  color: #E0E0E0;
   background-color: transparent;
   border-radius: 50%;
   border: none;
   padding: 5px 7px;
 }
 
-.TaskButton:hover {
+.CreateTaskButton:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
 
-.TaskButton:active {
+.CreateTaskButton:active {
   cursor: pointer;
   transform: scale(.95);
 }

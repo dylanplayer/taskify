@@ -5,6 +5,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   modulePathIgnorePatterns: ['<rootDir>/vendor/'],
   moduleNameMapper: {
-    '\\.(css|less|scss|sss|styl)$': '<rootDir>/node_modules/jest-css-modules'
+    '\\.(css|less|scss|sss|styl)$': '<rootDir>/node_modules/jest-css-modules',
+    '\\.(gql|graphql)$': '<rootDir>/node_modules/jest-transform-graphql',
   }
 };

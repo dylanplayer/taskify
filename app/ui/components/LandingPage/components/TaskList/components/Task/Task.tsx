@@ -1,17 +1,18 @@
 import React from 'react';
 import { FaRegTrashAlt } from 'react-icons/fa';
+import { Task } from '../../../../../../graphql/types/graphql';
 
 import styles from './Task.module.css';
 
 interface Props {
-  title: string;
+  task: Task;
 }
 
-export default function Task({ title }: Props) {
+export default function Task({ task }: Props) {
   return (
     <div className={styles.Task}>
       <div className={styles.TaskTitleContainer}>
-        <p className={styles.TaskTitle}>{title}</p>
+        <p className={styles.TaskTitle}>{task.title}</p>
       </div>
       <div className={styles.TaskButtonContainer}>
         <button className={styles.TaskButton}>
