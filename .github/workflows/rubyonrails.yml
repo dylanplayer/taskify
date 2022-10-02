@@ -38,7 +38,7 @@ jobs:
       - name: Yarn
         run: yarn install
       - name: Typecheck
-        run: yarn run tsc --project tsconfig.json
+        run: yarn run tsc --project tsconfig.json --noEmit
       - name: Jest
         run: yarn test
       - name: Run tests
