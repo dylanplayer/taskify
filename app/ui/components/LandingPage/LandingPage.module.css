@@ -1,7 +1,27 @@
 .LandingPage {
+  margin-top: 1rem;
   width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.LogoutButton {
+  background-color: rgb(100, 192, 236);
+  padding: .5rem 1rem;
+  color: #202020;
+  text-decoration: none;
+  border: 1px transparent;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.LogoutButton:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.LogoutButton:active {
+  transform: scale(.98);
 }

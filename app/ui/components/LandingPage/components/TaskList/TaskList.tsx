@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { ThreeDots } from 'react-loader-spinner';
 
-import { Task } from './components';
-import useTasksQuery from '../../../../hooks/useTasksQuery';
+import { Task, CreateTask } from './components';
+import {useTasksQuery} from '../../../../hooks';
+import { Task as TaskType } from '../../../../graphql/types/graphql';
 
 import styles from './TaskList.module.css';
-import { CreateTask } from './components/CreateTask';
 
 export default function TaskList() {
   const { loading, data, error } = useTasksQuery();
+  const [tasks, setTasks] = useState<TaskType[]>([]);
+
+  useEffect(() => {
+    if(data?.tasks) {
+      setTasks(data.tasks);
+    }
+  }, [data]);
 
   if(loading) {
     return (
-      <h1>Loading...</h1>
+      <ThreeDots
+        height="80"
+        width="80"
+        radius="9"
+        color="#E0E0E0"
+        ariaLabel="three-dots-loading"
+        visible={true}
+      />
     );
   }
 
@@ -21,7 +36,9 @@ export default function TaskList() {
     );
   }
 
-  const tasks = data.tasks;
+  const handleCreateTask = (task: TaskType) => {
+    setTasks([...tasks, task]);
+  };
 
   return (
     <div className={styles.TaskList}>
@@ -30,7 +47,7 @@ export default function TaskList() {
           <Task key={index} task={task}/>
         ))
       }
-      <CreateTask />
+      <CreateTask onTaskCreate={handleCreateTask}/>
     </div>
   );
 }

@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThreeDots } from 'react-loader-spinner';
+
+import { Task } from '../../../../../../graphql/types/graphql';
 import { useCreateTaskMutation } from '../../../../../../hooks';
 
 import styles from './CreateTask.module.css';
 
-export default function CreateTask() {
+interface Props {
+  onTaskCreate: (task: Task) => void;
+}
+
+export default function CreateTask({ onTaskCreate }: Props) {
   const [newTask, setNewTask] = useState('');
-  const [createTask, {loading, error}] = useCreateTaskMutation();
+  const [createTask, {loading, error, data}] = useCreateTaskMutation();
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
@@ -24,6 +30,13 @@ export default function CreateTask() {
       setNewTask('');
     }
   };
+
+  useEffect(() => {
+    if (data?.createTask?.task) {
+      const task = data?.createTask?.task;
+      onTaskCreate(task);
+    }
+  }, [data]);
 
   if (loading) {
     return (
