@@ -1,15 +1,6 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true,
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "allowJs": false,
     "declaration": false,
@@ -22,11 +13,16 @@
     "sourceMap": true,
     "target": "es6",
     "jsx": "react",
-    "noEmit": true,
-    "forceConsistentCasingInFileNames": true
+    "noEmit": false,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {"name": "typescript-plugin-css-modules"},
+    ],
+    "typeRoots": ["node_modules/@types", "app/ui/types"],
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "build.js"
   ],
   "compileOnSave": true
 }

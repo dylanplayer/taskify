@@ -1,9 +1,15 @@
-import { Avatar, Box, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import React from 'react';
+
+import { TaskList } from './components';
+
+import styles from './LandingPage.module.css';
 
 export default function LandingPage() {
   return (
-    <h1>Landing Page</h1>
+    <main className={styles.LandingPage}>
+      <h1>Taskify</h1>
+      <a href='/logout' className={styles.LogoutButton}>Logout</a>
+      <TaskList />
+    </main>
   );
 }

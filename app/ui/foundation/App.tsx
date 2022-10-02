@@ -1,13 +1,16 @@
 import React from 'react';
-import { Router } from './Router';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const theme = createTheme();
+import { Router } from './Router';
+import Graphql from './utilities/Graphql';
+
+import styles from './App.module.css';
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Router />
-    </ThemeProvider>
+    <main className={styles.App}>
+      <Graphql>
+        <Router />
+      </Graphql>
+    </main>
   );
 }

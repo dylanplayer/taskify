@@ -73,3 +73,5 @@ end
 
 gem "graphql", "~> 2.0"
 gem "graphiql-rails", group: :development
+
+gem "google_sign_in", "~> 1.2"
