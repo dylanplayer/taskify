@@ -29,6 +29,9 @@ ENV RAILS_MASTER_KEY=$RAILS_MASTER_KEY
 ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL
 
-RUN bin/rails db:migrate
+ARG RAILS_ENV
+ENV RAILS_ENV=$RAILS_ENV
 
-CMD bin/rails server -p 3000 -b 0.0.0.0 -e production
+RUN bin/rails db:exists && rake db:migrate || rake db:setup
+
+CMD bin/rails server -p 3000 -b 0.0.0.0
