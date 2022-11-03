@@ -27,6 +27,7 @@ export default function CreateTask({ onTaskCreate }: Props) {
           title: newTask,
         }
       });
+      
       setNewTask('');
     }
   };
@@ -37,6 +38,10 @@ export default function CreateTask({ onTaskCreate }: Props) {
       onTaskCreate(task);
     }
   }, [data]);
+
+  if (error) {
+    console.log(error);
+  }
 
   if (loading) {
     return (
@@ -49,11 +54,6 @@ export default function CreateTask({ onTaskCreate }: Props) {
         visible={true}
       />
     );
-  }
-
-  if (error) {
-    console.log(error);
-    return (<></>);
   }
 
   return (
