@@ -38,6 +38,10 @@ export default function CreateTask({ onTaskCreate }: Props) {
     }
   }, [data]);
 
+  if (error) {
+    console.log(error);
+  }
+
   if (loading) {
     return (
       <ThreeDots
@@ -49,11 +53,6 @@ export default function CreateTask({ onTaskCreate }: Props) {
         visible={true}
       />
     );
-  }
-
-  if (error) {
-    console.log(error);
-    return (<></>);
   }
 
   return (

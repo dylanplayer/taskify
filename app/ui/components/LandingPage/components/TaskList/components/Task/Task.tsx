@@ -9,6 +9,7 @@ import styles from './Task.module.css';
 
 interface Props {
   task: Task;
+  key: any;
 }
 
 export default function Task({ task }: Props) {
